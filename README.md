@@ -20,15 +20,6 @@
 1. Change directory `cd ~/.atom/packages/`
 2. Clone repository `git clone https://github.com/idleberg/atom-build-bridlensis build-bridlensis`
 
-## Configuration
-
-Before you can build, you need to specify the path to your `nsL.jar` in your Atom configuration.
-
-```cson
-"build-bridlensis":
-    pathToJar: "/path/to/nsL.jar"
-```
-
 ## Usage
 
 Before you can build, select an active target with your preferred build option.
@@ -38,11 +29,10 @@ Available targets:
 * `BridleNSIS (Windows)` – runs batch script, detecting installed `BridleNSIS.jar`, then compiling
 * `BridleNSIS` – compiles using manually specified path to `BridleNSIS.jar`
 
-#### Path to script
+#### Path to JAR
 
 When you can't use the Windows batch file, you need to specify a custom path for `BridleNSIS.jar` in your `config.cson`:
 
- ```cson
  "build-bridlensis":
     pathToJar: "path/to/BridleNSIS.jar"
  ```
