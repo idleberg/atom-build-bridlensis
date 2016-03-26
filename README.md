@@ -33,6 +33,7 @@ Available targets:
 
 When you can't use the Windows batch file, you need to specify a custom path for `BridleNSIS.jar` in your `config.cson`:
 
+```cson
  "build-bridlensis":
     pathToJar: "path/to/BridleNSIS.jar"
  ```
