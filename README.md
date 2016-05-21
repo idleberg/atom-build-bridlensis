@@ -13,12 +13,25 @@
 
 ### apm
 
-* Install package `apm install build-bridlensis` (or use the GUI)
+Install `build-bridlensis` from Atom's [Package Manager](http://flight-manual.atom.io/using-atom/sections/atom-packages/) or the command-line equivalent:
+
+`$ apm install build-bridlensis`
 
 ### GitHub
 
-1. Change directory `cd ~/.atom/packages/`
-2. Clone repository `git clone https://github.com/idleberg/atom-build-bridlensis build-bridlensis`
+Change to your Atom packages directory:
+
+```bash
+# Windows
+$ cd %USERPROFILE%\.atom\packages
+
+# Mac OS X & Linux
+$ cd ~/.atom/packages/
+```
+
+Clone repository as `build-bridlensis`:
+
+`$ git clone https://github.com/idleberg/atom-build-bridlensis build-bridlensis`
 
 ## Usage
 
