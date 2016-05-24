@@ -44,7 +44,7 @@ Available targets:
 
 #### Path to JAR
 
-When you can't use the Windows batch file, you need to specify a custom path for `BridleNSIS.jar` in your `config.cson`:
+When you can't use the Windows batch file, you need to specify a custom path for `BridleNSIS.jar` in your Atom [configuration](http://flight-manual.atom.io/using-atom/sections/basic-customization/#_global_configuration_settings):
 
 ```cson
  "build-bridlensis":
