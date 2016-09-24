@@ -36,6 +36,13 @@ Clone repository as `build-bridlensis`:
 $ git clone https://github.com/idleberg/atom-build-bridlensis build-bridlensis
 ```
 
+Install Node dependencies:
+
+```bash
+cd build-bridlensis
+npm install
+```
+
 ## Usage
 
 Before you can build, select an active target with your preferred build option.
