@@ -40,7 +40,7 @@ Install Node dependencies:
 
 ```bash
 $ cd build-bridlensis
-$ npm install
+$ yarn || npm install
 ```
 
 ## Usage
