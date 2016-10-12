@@ -36,10 +36,9 @@ Clone repository as `build-bridlensis`:
 $ git clone https://github.com/idleberg/atom-build-bridlensis build-bridlensis
 ```
 
-Install Node dependencies:
+Inside the cloned directory, install Node dependencies:
 
 ```bash
-$ cd build-bridlensis
 $ yarn || npm install
 ```
 
