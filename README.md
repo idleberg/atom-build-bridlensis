@@ -18,7 +18,7 @@ Install `build-bridlensis` from Atom's [Package Manager](http://flight-manual.at
 
 `$ apm install build-bridlensis`
 
-### GitHub
+### Using Git
 
 Change to your Atom packages directory:
 
