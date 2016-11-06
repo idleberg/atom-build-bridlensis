@@ -8,7 +8,7 @@
 [![David](https://img.shields.io/david/dev/idleberg/atom-build-bridlensis.svg?style=flat-square)](https://david-dm.org/idleberg/atom-build-bridlensis?type=dev)
 [![Gitter](https://img.shields.io/badge/chat-Gitter-ed1965.svg?style=flat-square)](https://gitter.im/NSIS-Dev/Atom)
 
-[Atom Build](https://atombuild.github.io/) for [BridleNSIS](https://github.com/henrikor2/bridlensis), translates BridleNSIS into NSIS
+[Atom Build](https://atombuild.github.io/) for [BridleNSIS](https://github.com/henrikor2/bridlensis), transpiles BridleNSIS into NSIS
 
 ## Installation
 
@@ -42,23 +42,24 @@ Inside the cloned directory, install Node dependencies:
 $ yarn || npm install
 ```
 
+## Configuration
+
+Make sure to specify the path to your `BridleNSIS.jar` in the package settings.
+
+**Example**:
+
+```cson
+"build-bridlensis":
+    pathToJar: "/path/to/BridleNSIS-0.4.1.jar"
+```
+
 ## Usage
 
 Before you can build, select an active target with your preferred build option.
 
 Available targets:
 
-* `BridleNSIS (Windows)` – runs batch script, detecting installed `BridleNSIS.jar`, then compiling
-* `BridleNSIS` – compiles using manually specified path to `BridleNSIS.jar`
-
-#### Path to JAR
-
-When you can't use the Windows batch file, you need to specify a custom path for `BridleNSIS.jar` in your Atom [configuration](http://flight-manual.atom.io/using-atom/sections/basic-customization/#_global_configuration_settings):
-
-```cson
- "build-bridlensis":
-    pathToJar: "path/to/BridleNSIS.jar"
- ```
+* `BridleNSIS` – transpile script
 
 ### Shortcuts
 
