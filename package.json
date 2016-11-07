@@ -1,6 +1,6 @@
 {
   "name": "build-bridlensis",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Atom Build provider for BridleNSIS, transpiles BridleNSIS into NSIS",
   "repository": "https://github.com/idleberg/atom-build-bridlensis",
   "license": "MIT OR GPL-2.0",
