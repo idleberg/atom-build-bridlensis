@@ -50,7 +50,7 @@ Make sure to specify the path to your `BridleNSIS.jar` in the package settings.
 
 ```cson
 "build-bridlensis":
-    pathToJar: "/path/to/BridleNSIS-0.4.1.jar"
+    pathToJar: "%PROGRAMFILES(X86)%\\BridleNSIS\\BridleNSIS-0.4.1.jar"
 ```
 
 ## Usage
