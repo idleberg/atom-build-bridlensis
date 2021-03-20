@@ -19,7 +19,25 @@ Install `build-bridlensis` from Atom's [Package Manager](http://flight-manual.at
 
 ### Using Git
 
-https://github.com/idleberg/atom-build-bridlensis
+Change to your Atom packages directory:
+
+**Windows**
+
+```powershell
+# Powershell
+$ cd $Env:USERPROFILE\.atom\packages
+```
+
+```cmd
+:: Command Prompt
+$ cd %USERPROFILE%\.atom\packages
+```
+
+**Linux & macOS**
+
+```bash
+$ cd ~/.atom/packages/
+```
 
 Clone repository as `build-bridlensis`:
 
