@@ -2,9 +2,9 @@ import { configSchema, getConfig } from './config';
 import { EventEmitter } from 'events';
 import { existsSync } from 'fs';
 import { satisfyDependencies } from 'atom-satisfy-dependencies';
-import { spawnSync } from 'child_process';
-import { which } from './util';
+import Logger from './log';
 import meta from '../package.json';
+import which from 'which';
 
 export { configSchema as config };
 
@@ -23,12 +23,12 @@ export function provideBuilder() {
 
     isEligible() {
       if (getConfig('alwaysEligible') === true) {
+        Logger.log('Always eligible');
         return true;
       }
 
       // First, check for Java
-      const cmd = spawnSync(which(), ['java']);
-      if (!cmd.stdout.toString()) {
+      if (!which.sync('java', { nothrow: true })) {
         return false;
       }
 
@@ -89,9 +89,15 @@ export function provideBuilder() {
   };
 }
 
-// This package depends on build, make sure it's installed
 export function activate() {
+  Logger.log('Activating package');
+
+  // This package depends on build, make sure it's installed
   if (getConfig('manageDependencies') === true) {
     satisfyDependencies(meta.name);
   }
+}
+
+export function deactivate() {
+  Logger.log('Deactivating package');
 }
