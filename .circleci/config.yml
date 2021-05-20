@@ -1,1 +1,45 @@
-cd atom-build-bridlensis;git add .circleci;git commit -m "update config";git push;cd ..; cd atom-build-bsc;git add .circleci;git commit -m "update config";git push;cd ..; cd atom-build-cmd;git add .circleci;git commit -m "update config";git push;cd ..; cd atom-build-coffee;git add .circleci;git commit -m "update config";git push;cd ..; cd atom-build-cssnext;git add .circleci;git commit -m "update config";git push;cd ..; cd atom-build-dart-sass;git add .circleci;git commit -m "update config";git push;cd ..; cd atom-build-decaffeinate;git add .circleci;git commit -m "update config";git push;cd ..; cd atom-build-fpc;git add .circleci;git commit -m "update config";git push;cd ..; cd atom-build-homebrew;git add .circleci;git commit -m "update config";git push;cd ..; cd atom-build-innosetup;git add .circleci;git commit -m "update config";git push;cd ..; cd atom-build-lessc;git add .circleci;git commit -m "update config";git push;cd ..; cd atom-build-makensis;git add .circleci;git commit -m "update config";git push;cd ..; cd atom-build-makensis-wine;git add .circleci;git commit -m "update config";git push;cd ..; cd atom-build-nsl;git add .circleci;git commit -m "update config";git push;cd ..; cd atom-build-osa;git add .circleci;git commit -m "update config";git push;cd ..; cd atom-build-ozc;git add .circleci;git commit -m "update config";git push;cd ..; cd atom-build-powershell;git add .circleci;git commit -m "update config";git push;cd ..; cd atom-build-pynsist;git add .circleci;git commit -m "update config";git push;cd ..; cd atom-build-python;git add .circleci;git commit -m "update config";git push;cd ..; cd atom-build-rscript;git add .circleci;git commit -m "update config";git push;cd ..; cd atom-build-sass;git add .circleci;git commit -m "update config";git push;cd ..; cd atom-build-sassc;git add .circleci;git commit -m "update config";git push;cd ..; cd atom-build-stylus;git add .circleci;git commit -m "update config";git push;cd ..; cd atom-build-sugarss;git add .circleci;git commit -m "update config";git push;cd ..; cd atom-build-tclsh;git add .circleci;git commit -m "update config";git push;cd ..; cd atom-build-tsc;git add .circleci;git commit -m "update config";git push;cd ..;
+version: 2.1
+
+commands:
+  run-test:
+    steps:
+      - checkout
+      - restore_cache:
+          name: Restore Dependency Cache
+          keys:
+            - v1-dependency-cache-{{ checksum "package-lock.json" }}-{{ .Environment.CIRCLE_JOB }}
+            - v1-dependency-cache-
+      - run:
+          name: Install Dependencies
+          command: npm ci
+      - save_cache:
+          name: Create Dependency Cache
+          key: v1-dependency-cache-{{ checksum "package-lock.json" }}-{{ .Environment.CIRCLE_JOB }}
+          paths:
+            - ./node_modules
+      - run:
+          name: Lint Source
+          command: npm run lint --if-present
+      - run:
+          name: Build Source
+          command: npm run build --if-present
+
+jobs:
+  node-current:
+    docker:
+      - image: cimg/node:current
+    steps:
+      - run-test
+
+  node-lts:
+    docker:
+      - image: cimg/node:lts
+    steps:
+      - run-test
+
+workflows:
+  node-run-tests:
+    jobs:
+      - node-current
+      - node-lts
+  version: 2
