@@ -1,11 +1,10 @@
 # build-bridlensis
 
-[![apm](https://img.shields.io/apm/l/build-bridlensis.svg?style=flat-square)](https://atom.io/packages/build-bridlensis)
-[![apm](https://img.shields.io/apm/v/build-bridlensis.svg?style=flat-square)](https://atom.io/packages/build-bridlensis)
-[![apm](https://img.shields.io/apm/dm/build-bridlensis.svg?style=flat-square)](https://atom.io/packages/build-bridlensis)
+[![apm](https://flat.badgen.net/apm/license/build-bridlensis)](https://atom.io/packages/build-bridlensis)
+[![apm](https://flat.badgen.net/apm/v/build-bridlensis)](https://atom.io/packages/build-bridlensis)
+[![apm](https://flat.badgen.net/apm/dl/build-bridlensis)](https://atom.io/packages/build-bridlensis)
 [![CircleCI](https://flat.badgen.net/circleci/github/idleberg/atom-build-bridlensis)](https://circleci.com/gh/idleberg/atom-build-bridlensis)
-[![David](https://img.shields.io/david/dev/idleberg/atom-build-bridlensis.svg?style=flat-square)](https://david-dm.org/idleberg/atom-build-bridlensis?type=dev)
-[![Gitter](https://img.shields.io/badge/chat-Gitter-ed1965.svg?style=flat-square)](https://gitter.im/NSIS-Dev/Atom)
+[![David](https://flat.badgen.net/david/dev/idleberg/atom-build-bridlensis)](https://david-dm.org/idleberg/atom-build-bridlensis?type=dev)
 
 [Atom Build](https://atombuild.github.io/) for [BridleNSIS](https://github.com/henrikor2/bridlensis), transpiles BridleNSIS into NSIS
 
