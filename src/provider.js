@@ -3,7 +3,7 @@ import { EventEmitter } from 'events';
 import { existsSync } from 'fs';
 import { satisfyDependencies } from 'atom-satisfy-dependencies';
 import Logger from './log';
-import meta from '../package.json';
+import { name } from '../package.json';
 import which from 'which';
 
 export { configSchema as config };
@@ -41,21 +41,21 @@ export function provideBuilder() {
 
       // Warn only
       if (getConfig('mutePathWarning') === false) {
-        const notification = atom.notifications.addWarning(`**${meta.name}**: No valid \`BridleNSIS.jar\` was specified in your settings`, {
+        const notification = atom.notifications.addWarning(`**${name}**: No valid \`BridleNSIS.jar\` was specified in your settings`, {
           dismissable: true,
           buttons: [
             {
               text: 'Open Settings',
               className: 'icon icon-gear',
               onDidClick: function () {
-                atom.workspace.open('atom://config/packages/' + meta.name, {pending: true, searchAllPanes: true});
+                atom.workspace.open('atom://config/packages/' + name, {pending: true, searchAllPanes: true});
                 notification.dismiss();
               }
             },
             {
               text: 'Ignore',
               onDidClick: function () {
-                atom.config.set(meta.name + '.mutePathWarning', true);
+                atom.config.set(name + '.mutePathWarning', true);
                 notification.dismiss();
               }
             }
@@ -94,7 +94,7 @@ export function activate() {
 
   // This package depends on build, make sure it's installed
   if (getConfig('manageDependencies') === true) {
-    satisfyDependencies(meta.name);
+    satisfyDependencies(name);
   }
 }
 
